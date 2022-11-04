@@ -7,7 +7,28 @@
 	},
 	"item": [
 		{
-			"name": "GET_booking_ID_723",
+			"name": "GET_booking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_booking_ID",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -28,12 +49,87 @@
 			"response": []
 		},
 		{
-			"name": "GET_booking",
+			"name": "POST_booking",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Jon\",\n    \"lastname\" : \"Snow\",\n    \"totalprice\" : 722,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"june 20, 2021\",\n        \"checkout\" : \"2019-01-04\"\n    },\n    \"additionalneeds\" : \"Breakfast, King\"\n}"
+				},
 				"url": {
-					"raw": "https://restful-booker.herokuapp.com/booking/",
+					"raw": "https://restful-booker.herokuapp.com/booking",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_booking_ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=cd305082cd50bbc"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Jon Aegone\",\n    \"lastname\" : \"Snow\",\n    \"totalprice\" : 722,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"june 20, 2021\",\n        \"checkout\" : \"2019-01-04\"\n    },\n    \"additionalneeds\" : \"Breakfast, King\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/3784",
 					"protocol": "https",
 					"host": [
 						"restful-booker",
@@ -42,7 +138,37 @@
 					],
 					"path": [
 						"booking",
-						""
+						"3784"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_booking",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=6484f34ec0f0e79"
+					}
+				],
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/3597",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"3597"
 					]
 				}
 			},
